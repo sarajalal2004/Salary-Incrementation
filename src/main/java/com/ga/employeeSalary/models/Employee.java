@@ -41,4 +41,8 @@ public class Employee {
         }
         return this.salary;
     }
+
+    public String employeeToCSVLine(){
+        return this.id + "," + this.name + "," + String.format("%.3f",this.salary) + "," + this.joinDate + "," + this.role + "," + this.projectProgress + "\n";
+    }
 }
