@@ -56,10 +56,12 @@ public class CSVProcessor {
 
             cachedThreadPool.shutdown();
 
+            System.out.println("||||||||||||||||| file output ||||||||||||||||\n");
+
             for(int i =1; i<= result.size(); i++){
                 writer.write(result.get(i));
                 // for testing
-                System.out.println(result.get(i));
+                System.out.print(result.get(i));
             }
 
         } catch (IOException | InterruptedException | ExecutionException e) {
