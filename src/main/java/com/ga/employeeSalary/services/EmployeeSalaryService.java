@@ -18,6 +18,13 @@ public class EmployeeSalaryService {
         this.csvProcessor = csvProcessor;
     }
 
+    /**
+     * Read the uploaded employee file and
+     * return file with the updated employee salary
+     *
+     * @param file     the uploaded CSV file containing employee data
+     * @return          the generated file with updated salaries
+     */
     public ResponseEntity<FileSystemResource> incrementSalaries(MultipartFile file){
         File outputfile = csvProcessor.UpdateSalaries(file,"Updated" + file.getOriginalFilename().substring(0,1).toUpperCase() + file.getOriginalFilename().substring(1));
         return ResponseEntity.ok()
