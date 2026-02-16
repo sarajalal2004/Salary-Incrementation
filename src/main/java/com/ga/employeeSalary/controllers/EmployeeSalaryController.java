@@ -19,4 +19,9 @@ public class EmployeeSalaryController {
     private void setEmployeeSalaryService(EmployeeSalaryService employeeSalaryService){
         this.employeeSalaryService = employeeSalaryService;
     }
+
+    @PostMapping(path = "/increment", consumes = "multipart/form-data")
+    public ResponseEntity<FileSystemResource> incrementSalaries(@RequestParam("file") MultipartFile input){
+        return employeeSalaryService.incrementSalaries(input);
+    }
 }
