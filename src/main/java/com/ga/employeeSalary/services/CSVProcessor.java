@@ -60,6 +60,8 @@ public class CSVProcessor {
 
             for(int i =1; i<= result.size(); i++){
                 writer.write(result.get(i));
+                // for testing
+                System.out.println(result.get(i));
             }
 
         } catch (IOException | InterruptedException | ExecutionException e) {
