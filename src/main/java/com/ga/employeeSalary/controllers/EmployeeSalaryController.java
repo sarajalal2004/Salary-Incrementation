@@ -20,6 +20,13 @@ public class EmployeeSalaryController {
         this.employeeSalaryService = employeeSalaryService;
     }
 
+    /**
+     * post controller for getting and return
+     * the file after using service to update it
+     *
+     * @param input     the uploaded CSV file containing employee data
+     * @return          the generated file with updated salaries
+     */
     @PostMapping(path = "/increment", consumes = "multipart/form-data")
     public ResponseEntity<FileSystemResource> incrementSalaries(@RequestParam("file") MultipartFile input){
         return employeeSalaryService.incrementSalaries(input);
