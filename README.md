@@ -34,7 +34,7 @@ The API supports SCV file formats
 10,Jack,67000.0,2020-09-15,Manager,0.5
 ```
 * The program returns a text file included the result.
-
+![result image in postman](https://i.imgur.com/wLF8doY.png)
 ***
 ### ***Future update***
 - [ ] Add frontend for better user experiance
