@@ -22,6 +22,11 @@ public class Employee {
     // On joined date, they'll receive 2% increase for each year worked only if they completed one year of work
     // Director receives 5% increase, Manager receives 2% increase. Employee receives 1% increase.
 
+
+    /**
+     * Updates employee salaries
+     * @return Double the new salary
+     */
     public Double updateSalary(){
         if(this.projectProgress >= 0.6){
             double Increase = 1;
@@ -40,6 +45,11 @@ public class Employee {
         return this.salary;
     }
 
+
+    /**
+     * Return the CSV format string for employee
+     * @return String with CSV formated
+     */
     public String employeeToCSVLine(){
         return this.id + "," + this.name + "," + String.format("%.3f",this.salary) + "," + this.joinDate + "," + this.role + "," + this.projectProgress + "\n";
     }
