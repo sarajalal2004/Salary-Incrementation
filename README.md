@@ -8,6 +8,10 @@ By: Sara Jalal
 ### ***Description***
 An API used to increment the salaries based on predefind basis. 
 The API supports SCV file formats
+The salary updated according to following rules
+   * If the employee completed less than 60% of the projects they will NOT receive any increase in salary
+   * On joined date, they'll receive 2% increase for each year worked only if they completed one year of work
+   * Director receives 5% increase, Manager receives 2% increase. Employee receives 1% increase.
 ***
 ### ***Technologies Used***
 * Intellij
