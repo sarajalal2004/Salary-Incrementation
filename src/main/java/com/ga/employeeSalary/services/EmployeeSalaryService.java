@@ -19,7 +19,13 @@ public class EmployeeSalaryService {
         this.csvProcessor = csvProcessor;
     }
 
-    public void incrementSalaries(MultipartFile file){
+    public ResponseEntity<FileSystemResource> incrementSalaries(MultipartFile file){
         File outputfile = csvProcessor.UpdateSalaries(file,"Updated" + file.getOriginalFilename().substring(0,1).toUpperCase() + file.getOriginalFilename().substring(1));
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION,
+                        "attachment; filename=" + outputfile.getName())
+                .contentType(MediaType.parseMediaType("text/csv"))
+                .contentLength(outputfile.length())
+                .body(new FileSystemResource(outputfile));
     }
 }
