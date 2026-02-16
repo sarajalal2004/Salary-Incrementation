@@ -15,6 +15,15 @@ import java.util.concurrent.locks.*;
 public class CSVProcessor {
     private final ReentrantLock lock = new ReentrantLock();
 
+    /**
+     * Updates employee salaries from the uploaded CSV file
+     * and writes the updated data into a new file.
+     *
+     * @param input     the uploaded CSV file containing employee data
+     * @param fileName  the name of the output file to create
+     * @return          the generated file with updated salaries
+     * @throws RuntimeException if file processing fails
+     */
     public File UpdateSalaries(MultipartFile input, String fileName){
         File file = new File(fileName);
         try (InputStream inputStream = input.getInputStream();
